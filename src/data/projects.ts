@@ -70,4 +70,12 @@ export const projects: Project[] = [
     thumb: "/thumbs/door.svg",
     tags: ["embedded", "iot"],
   },
+  {
+    slug: "treadmill-upper-body-coach",
+    title: "Treadmill upper-body form coach",
+    oneLiner:
+      "Phone-on-console CV coach for upper-body cues (bounce, posture, arm swing) using the treadmill ‘Netflix setup’ constraint.",
+    thumb: "/thumbs/treadmill.svg",
+    tags: ["cv", "sports", "mobile"],
+  },
 ];

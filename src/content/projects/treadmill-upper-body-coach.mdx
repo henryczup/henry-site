@@ -1,0 +1,33 @@
+---
+title: Treadmill upper-body form coach
+summary: A phone-on-console computer vision coach that leverages the “Netflix phone prop” constraint for consistent camera placement.
+---
+
+## The constraint that makes it work
+Most running-form apps die on setup friction. On a treadmill, the phone is already propped up (often for Netflix), which gives you:
+- repeatable camera placement
+- a built-in user habit
+
+That constraint makes an upper-body-first coach realistic.
+
+## What it targets (upper-body cues)
+From a front-facing treadmill view you can get useful signals without perfect full-body capture:
+- vertical bounce (head/shoulder oscillation)
+- trunk lean drift / slouching
+- shoulder hiking / tension
+- arm swing crossing midline
+- asymmetry in arm swing
+- forward head posture
+
+## v1 pipeline
+- person detect
+- keypoints (nose/ears/shoulders/elbows/wrists/hips if visible)
+- temporal smoothing
+- “coach state machine” that only speaks when confident + persistent
+
+## Product decisions
+- **Setup gate**: verify torso/arms are in frame, lighting ok, low vibration; otherwise give one-line fix.
+- **Separate pose from advice**: pose every frame, advice every 10–30s when consistent.
+
+## Next
+Pick one metric for v1 (e.g., vertical bounce + tension) and make it *boringly reliable*.
