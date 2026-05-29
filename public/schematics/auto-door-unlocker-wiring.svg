@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Auto Door Unlocker Arduino-Style Wiring Diagram</title>
+  <desc id="desc">Fritzing-style wiring diagram showing an ESP32 connected to an XE0068DT DTMF module, RJ11 breakout, capacitors, and 5V power.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .shadow { filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.16)); }
+      .title { fill: #111827; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 32px; font-weight: 800; }
+      .subtitle { fill: #475569; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 16px; }
+      .label { fill: #111827; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 800; }
+      .small { fill: #334155; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .tiny { fill: #334155; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 11px; }
+      .pin-label { fill: #0f172a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 700; }
+      .wire-label { fill: #111827; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 800; paint-order: stroke; stroke: #f8fafc; stroke-width: 7px; stroke-linejoin: round; }
+      .wire { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .wire-ri { stroke: #f59e0b; }
+      .wire-oh { stroke: #22c55e; }
+      .wire-data { stroke: #0284c7; }
+      .wire-ctrl { stroke: #9333ea; }
+      .wire-pwr { stroke: #ef4444; }
+      .wire-gnd { stroke: #111827; }
+      .wire-line { stroke: #1d4ed8; }
+      .pin { fill: #fef3c7; stroke: #92400e; stroke-width: 1.3; }
+      .pad { fill: #f8fafc; stroke: #334155; stroke-width: 1.2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1500" height="940" />
+  <text x="70" y="60" class="title">Auto Door Unlocker Wiring</text>
+  <text x="70" y="90" class="subtitle">ESP32 detects an intercom ring, drives off-hook, writes DTMF 9 to the XE0068DT, then hangs up.</text>
+
+  <!-- ESP32 illustrated board -->
+  <g id="esp32" class="shadow" transform="translate(875 195)">
+    <rect x="0" y="0" width="360" height="520" rx="18" fill="#0f766e" stroke="#0f4f4a" stroke-width="3" />
+    <rect x="32" y="28" width="296" height="464" rx="10" fill="#0d9488" stroke="#134e4a" stroke-width="1.5" opacity="0.9" />
+    <text x="94" y="55" class="label" fill="#f8fafc">ESP32 Dev Board</text>
+    <rect x="132" y="86" width="96" height="54" rx="8" fill="#d1d5db" stroke="#64748b" stroke-width="2" />
+    <rect x="150" y="101" width="60" height="24" rx="3" fill="#94a3b8" />
+    <text x="156" y="119" class="tiny">Micro USB</text>
+    <rect x="123" y="185" width="114" height="92" rx="8" fill="#111827" stroke="#334155" stroke-width="2" />
+    <text x="147" y="235" class="tiny" fill="#cbd5e1">ESP32</text>
+    <rect x="108" y="327" width="144" height="48" rx="5" fill="#e5e7eb" stroke="#64748b" />
+    <text x="136" y="357" class="tiny">PCB antenna</text>
+
+    <!-- left pin rail for signals -->
+    <g>
+      <circle id="esp-ri" cx="0" cy="150" r="8" class="pin" /><text x="18" y="154" class="pin-label">GPIO4 RI</text>
+      <circle id="esp-oh" cx="0" cy="190" r="8" class="pin" /><text x="18" y="194" class="pin-label">GPIO5 OH</text>
+      <circle id="esp-d0" cx="0" cy="250" r="8" class="pin" /><text x="18" y="254" class="pin-label">GPIO12 D0</text>
+      <circle id="esp-d1" cx="0" cy="282" r="8" class="pin" /><text x="18" y="286" class="pin-label">GPIO13 D1</text>
+      <circle id="esp-d2" cx="0" cy="314" r="8" class="pin" /><text x="18" y="318" class="pin-label">GPIO14 D2</text>
+      <circle id="esp-d3" cx="0" cy="346" r="8" class="pin" /><text x="18" y="350" class="pin-label">GPIO15 D3</text>
+      <circle id="esp-wr" cx="0" cy="408" r="8" class="pin" /><text x="18" y="412" class="pin-label">GPIO21 WR</text>
+      <circle id="esp-rd" cx="0" cy="440" r="8" class="pin" /><text x="18" y="444" class="pin-label">GPIO22 RD</text>
+      <circle id="esp-cs" cx="0" cy="472" r="8" class="pin" /><text x="18" y="476" class="pin-label">GPIO23 CS</text>
+      <circle id="esp-rs0" cx="0" cy="504" r="8" class="pin" /><text x="18" y="508" class="pin-label">GPIO25 RS0</text>
+    </g>
+
+    <!-- right rail for power -->
+    <circle id="esp-5v" cx="360" cy="178" r="8" class="pin" /><text x="278" y="182" class="pin-label">5V / VIN</text>
+    <circle id="esp-gnd" cx="360" cy="452" r="8" class="pin" /><text x="292" y="456" class="pin-label">GND</text>
+  </g>
+
+  <!-- XE0068DT illustrated red module -->
+  <g id="xe" class="shadow" transform="translate(245 175)">
+    <rect x="0" y="0" width="395" height="565" rx="16" fill="#dc2626" stroke="#991b1b" stroke-width="3" />
+    <rect x="25" y="24" width="345" height="517" rx="8" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5" />
+    <text x="114" y="58" class="label" fill="#fff7ed">XE0068DT</text>
+    <text x="103" y="82" class="small" fill="#fff7ed">DTMF transceiver module</text>
+    <rect x="125" y="130" width="140" height="90" rx="8" fill="#1f2937" stroke="#111827" stroke-width="2" />
+    <text x="151" y="180" class="tiny" fill="#e5e7eb">DTMF IC</text>
+    <rect x="42" y="315" width="76" height="120" rx="8" fill="#fbbf24" stroke="#92400e" stroke-width="2" />
+    <text x="53" y="352" class="tiny">Phone</text>
+    <text x="53" y="369" class="tiny">line</text>
+    <text x="53" y="386" class="tiny">interface</text>
+
+    <!-- input/output pins on right side -->
+    <circle id="xe-ri" cx="395" cy="170" r="8" class="pin" /><text x="310" y="174" class="pin-label">RI</text>
+    <circle id="xe-oh" cx="395" cy="210" r="8" class="pin" /><text x="300" y="214" class="pin-label">OH</text>
+    <circle id="xe-d0" cx="395" cy="270" r="8" class="pin" /><text x="305" y="274" class="pin-label">D0</text>
+    <circle id="xe-d1" cx="395" cy="302" r="8" class="pin" /><text x="305" y="306" class="pin-label">D1</text>
+    <circle id="xe-d2" cx="395" cy="334" r="8" class="pin" /><text x="305" y="338" class="pin-label">D2</text>
+    <circle id="xe-d3" cx="395" cy="366" r="8" class="pin" /><text x="305" y="370" class="pin-label">D3</text>
+    <circle id="xe-wr" cx="395" cy="428" r="8" class="pin" /><text x="302" y="432" class="pin-label">WR</text>
+    <circle id="xe-rd" cx="395" cy="460" r="8" class="pin" /><text x="303" y="464" class="pin-label">RD</text>
+    <circle id="xe-cs" cx="395" cy="492" r="8" class="pin" /><text x="305" y="496" class="pin-label">CS</text>
+    <circle id="xe-rs0" cx="395" cy="524" r="8" class="pin" /><text x="292" y="528" class="pin-label">RS0</text>
+
+    <!-- power pins bottom -->
+    <circle id="xe-vcc" cx="170" cy="565" r="8" class="pin" /><text x="151" y="544" class="pin-label">VCC</text>
+    <circle id="xe-gnd" cx="270" cy="565" r="8" class="pin" /><text x="249" y="544" class="pin-label">GND</text>
+
+    <!-- line pins left side -->
+    <circle id="xe-tip" cx="0" cy="337" r="8" class="pin" /><text x="18" y="341" class="pin-label">TIP</text>
+    <circle id="xe-ring" cx="0" cy="397" r="8" class="pin" /><text x="18" y="401" class="pin-label">RING</text>
+  </g>
+
+  <!-- RJ11 breakout as small board/jack -->
+  <g id="rj11" class="shadow" transform="translate(65 315)">
+    <rect x="0" y="0" width="135" height="205" rx="14" fill="#f97316" stroke="#9a3412" stroke-width="3" />
+    <rect x="28" y="33" width="82" height="65" rx="8" fill="#e5e7eb" stroke="#64748b" stroke-width="2" />
+    <rect x="42" y="50" width="54" height="28" rx="3" fill="#cbd5e1" />
+    <text x="41" y="133" class="label">RJ11</text>
+    <text x="29" y="156" class="small">breakout</text>
+    <circle id="rj-tip" cx="135" cy="47" r="8" class="pin" />
+    <circle id="rj-ring" cx="135" cy="143" r="8" class="pin" />
+  </g>
+
+  <!-- Electrolytic capacitors as parts -->
+  <g id="caps" class="shadow" transform="translate(190 330)">
+    <g>
+      <ellipse cx="0" cy="32" rx="18" ry="31" fill="#1e293b" stroke="#0f172a" stroke-width="2" />
+      <rect x="-18" y="32" width="36" height="32" fill="#334155" />
+      <line x1="-7" y1="69" x2="-7" y2="102" stroke="#64748b" stroke-width="4" />
+      <line x1="9" y1="69" x2="9" y2="102" stroke="#64748b" stroke-width="4" />
+      <text x="-26" y="-10" class="tiny">470uF</text>
+    </g>
+    <g transform="translate(0 96)">
+      <ellipse cx="0" cy="32" rx="18" ry="31" fill="#1e293b" stroke="#0f172a" stroke-width="2" />
+      <rect x="-18" y="32" width="36" height="32" fill="#334155" />
+      <line x1="-7" y1="69" x2="-7" y2="102" stroke="#64748b" stroke-width="4" />
+      <line x1="9" y1="69" x2="9" y2="102" stroke="#64748b" stroke-width="4" />
+      <text x="-26" y="-10" class="tiny">470uF</text>
+    </g>
+  </g>
+
+  <!-- 5V adapter -->
+  <g id="power" class="shadow" transform="translate(1138 770)">
+    <rect x="0" y="0" width="230" height="95" rx="20" fill="#111827" stroke="#020617" stroke-width="3" />
+    <text x="52" y="38" class="label" style="fill:#f8fafc">5V Power</text>
+    <text x="50" y="62" class="small" style="fill:#cbd5e1">USB adapter / supply</text>
+    <circle id="pwr-5v" cx="0" cy="30" r="8" class="pin" />
+    <circle id="pwr-gnd" cx="0" cy="70" r="8" class="pin" />
+  </g>
+
+  <!-- Signal wires: module to ESP32 -->
+  <path class="wire wire-ri" d="M640 345 C715 345 800 345 875 345" />
+  <text x="690" y="333" class="wire-label">GPIO4 -> RI</text>
+  <path class="wire wire-oh" d="M640 385 C715 385 800 385 875 385" />
+  <text x="690" y="407" class="wire-label">GPIO5 -> OH</text>
+
+  <path class="wire wire-data" d="M640 445 C720 445 795 445 875 445" />
+  <path class="wire wire-data" d="M640 477 C720 477 795 477 875 477" />
+  <path class="wire wire-data" d="M640 509 C720 509 795 509 875 509" />
+  <path class="wire wire-data" d="M640 541 C720 541 795 541 875 541" />
+  <text x="688" y="496" class="wire-label">GPIO12-15 -> D0-D3</text>
+
+  <path class="wire wire-ctrl" d="M640 603 C720 603 795 603 875 603" />
+  <path class="wire wire-ctrl" d="M640 635 C720 635 795 635 875 635" />
+  <path class="wire wire-ctrl" d="M640 667 C720 667 795 667 875 667" />
+  <path class="wire wire-ctrl" d="M640 699 C720 699 795 699 875 699" />
+  <text x="684" y="654" class="wire-label">GPIO21/22/23/25 -> WR/RD/CS/RS0</text>
+
+  <!-- RJ11 line wires through capacitors -->
+  <path class="wire wire-line" d="M200 362 C218 362 225 337 245 337" />
+  <path class="wire wire-line" d="M200 458 C218 458 225 397 245 397" />
+  <path class="wire wire-line" d="M200 362 C187 362 187 362 200 362" />
+  <path class="wire wire-line" d="M200 458 C187 458 187 458 200 458" />
+  <path class="wire wire-line" d="M200 362 C165 362 165 362 200 362" />
+  <path class="wire wire-line" d="M200 458 C165 458 165 458 200 458" />
+  <text x="77" y="293" class="wire-label">Apartment intercom line</text>
+
+  <!-- More spacious power and ground routing -->
+  <path class="wire wire-pwr" d="M1138 800 C965 802 685 800 415 740" />
+  <path class="wire wire-pwr" d="M1138 800 C1275 790 1310 596 1235 373" />
+  <text x="706" y="788" class="wire-label">5V rail</text>
+
+  <path class="wire wire-gnd" d="M1138 840 C930 910 630 885 515 740" />
+  <path class="wire wire-gnd" d="M1138 840 C1395 810 1405 590 1235 647" />
+  <text x="706" y="880" class="wire-label">GND rail</text>
+
+  <!-- Note box -->
+  <g transform="translate(70 945)">
+    <rect x="0" y="-50" width="1360" height="48" rx="12" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="20" y="-20" class="small">Pin map from project code: RI=GPIO4, OH=GPIO5, D0-D3=GPIO12-15, WR=GPIO21, RD=GPIO22, CS=GPIO23, RS0=GPIO25. Verify phone-line isolation before live intercom use.</text>
+  </g>
+</svg>

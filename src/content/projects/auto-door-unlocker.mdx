@@ -7,11 +7,10 @@ links:
 ---
 
 ## What it does
-Listens for intercom ring events and triggers an off-hook + DTMF sequence to unlock the building entrance.
+An ESP32-based system that detects apartment intercom calls and automatically sends the correct DTMF sequence to unlock the building entrance.
 
 ## Highlights
-- ESP32 + DTMF module
-- Ring detection + GPIO control
-
-## Notes
-Add wiring diagram + enclosure photos.
+- Detects incoming intercom calls using ring detection
+- Initiates an off-hook response and DTMF unlock sequence
+- Integrates ESP32 GPIO control with a DTMF module
+- Turns a repetitive apartment-entry workflow into a small embedded automation

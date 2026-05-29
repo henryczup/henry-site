@@ -33,17 +33,7 @@ export default async function ProjectPage({
             target="_blank"
             rel="noreferrer"
           >
-            Live site
-          </a>
-        ) : null}
-        {p.repo ? (
-          <a
-            className="rounded-lg border border-zinc-800 px-3 py-1.5 text-zinc-200 hover:border-zinc-700"
-            href={p.repo}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Repo
+            {p.linkLabel || "Open project"}
           </a>
         ) : null}
       </div>

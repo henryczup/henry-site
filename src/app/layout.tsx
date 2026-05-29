@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Henry Czupryna",
-  description: "Projects and writeups.",
+  description: "Computer engineering portfolio, projects, and resume.",
 };
 
 export default function RootLayout({
@@ -21,11 +21,13 @@ export default function RootLayout({
               <nav className="text-sm text-zinc-400">
                 <a className="hover:text-zinc-200" href="/">Projects</a>
                 <span className="mx-2">·</span>
-                <a className="hover:text-zinc-200" href="/writeups">Writeups</a>
+                <a className="hover:text-zinc-200" href="/resume">Resume</a>
               </nav>
             </div>
             <div className="text-sm text-zinc-400">
               <a className="hover:text-zinc-200" href="mailto:henryczup@gmail.com">henryczup@gmail.com</a>
+              <span className="mx-2">·</span>
+              <a className="hover:text-zinc-200" href="tel:+17157817176">715-781-7176</a>
               <span className="mx-2">·</span>
               <a className="hover:text-zinc-200" href="https://www.linkedin.com/in/henry-czupryna-2b3044250/" target="_blank" rel="noreferrer">LinkedIn</a>
               <span className="mx-2">·</span>
