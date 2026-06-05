@@ -103,11 +103,6 @@ export default function Resume() {
     <main className="max-w-4xl">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Resume</h1>
-        <p className="mt-3 max-w-2xl text-zinc-300">
-          Computer engineering graduate student focused on electromagnetics,
-          machine learning, signal processing, embedded hardware, and practical
-          full-stack tools.
-        </p>
       </div>
 
       <div className="space-y-8">
