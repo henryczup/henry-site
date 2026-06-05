@@ -32,7 +32,9 @@ function Entry({ item }: Readonly<{ item: ResumeItem }>) {
             </p>
           ) : null}
         </div>
-        <div className="text-sm text-zinc-500 sm:text-right">{item.date}</div>
+        {item.date ? (
+          <div className="text-sm text-zinc-500 sm:text-right">{item.date}</div>
+        ) : null}
       </div>
 
       {item.subtitle ? (
@@ -45,6 +47,36 @@ function Entry({ item }: Readonly<{ item: ResumeItem }>) {
             <li key={bullet}>{bullet}</li>
           ))}
         </ul>
+      ) : null}
+
+      {item.projects ? (
+        <div className="mt-4 space-y-4">
+          {item.projects.map((project) => (
+            <div key={project.title}>
+              <h4 className="text-sm font-medium text-zinc-200">{project.title}</h4>
+              <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-300">
+                {project.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+              {project.links ? (
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      className="rounded-lg border border-zinc-800 px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700"
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          ))}
+        </div>
       ) : null}
 
       {item.links ? (
@@ -72,8 +104,9 @@ export default function Resume() {
       <div className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Resume</h1>
         <p className="mt-3 max-w-2xl text-zinc-300">
-          Computer engineering graduate student focused on RF/microwave systems,
-          embedded hardware, machine learning, and practical full-stack tools.
+          Computer engineering graduate student focused on electromagnetics,
+          machine learning, signal processing, embedded hardware, and practical
+          full-stack tools.
         </p>
       </div>
 

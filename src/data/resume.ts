@@ -6,23 +6,28 @@ export type ResumeItem = {
   subtitle?: string;
   bullets?: string[];
   links?: { label: string; href: string }[];
+  projects?: {
+    title: string;
+    bullets: string[];
+    links?: { label: string; href: string }[];
+  }[];
 };
 
 export const education: ResumeItem[] = [
   {
-    title: "M.S. in Electrical and Computer Engineering",
-    org: "University of Wisconsin-Madison",
-    location: "Madison, WI",
-    date: "Jan 2026 - expected Dec 2026",
-    subtitle: "Focus: RF/microwave engineering, machine learning, and signal processing",
-  },
-  {
     title: "B.S. in Computer Engineering",
     org: "University of Wisconsin-Madison",
     location: "Madison, WI",
-    date: "Sept 2022 - Dec 2025",
+    date: "September 2022 - December 2025",
     subtitle:
-      "GPA: 3.54/4.00. Coursework: operating systems, computer architecture, digital system design and synthesis, microprocessor systems, artificial neural networks, applied communications systems, and hardware prototyping capstone.",
+      "GPA: 3.54/4.00. Courses: Operating Systems, Computer Architecture, Digital System Design & Synthesis, Microprocessor Systems, Artificial Neural Networks, Applied Communications Systems, Client Focused Hardware Prototyping Capstone.",
+  },
+  {
+    title: "M.S. in Electrical and Computer Engineering",
+    org: "University of Wisconsin-Madison",
+    location: "Madison, WI",
+    date: "January 2026 - Expected December 2026",
+    subtitle: "Focus: Electromagnetics, Machine Learning & Signal Processing",
   },
 ];
 
@@ -31,35 +36,58 @@ export const experience: ResumeItem[] = [
     title: "Software Engineering Intern",
     org: "Honeywell Aerospace",
     location: "Phoenix, AZ",
-    date: "Jun 2025 - Aug 2025",
+    date: "June 2025 - August 2025",
     bullets: [
-      "Developed a secure on-device AI system in Docker for local data processing workflows.",
-      "Automated an internal data-search task, saving 13.87 minutes per hour of analyst work.",
-      "Used test-bench behavior and internal requirement documents to inform system design decisions.",
+      "Developed a secure, on-device AI system in Docker for local data processing.",
+      "Automated data search task saving 13.87 minutes per hour of work.",
+      "Informed system design by interfacing with test benches and internal requirement documents.",
     ],
   },
   {
     title: "Researcher",
     org: "University of Wisconsin-Madison",
     location: "Madison, WI",
-    date: "May 2024 - present",
-    bullets: [
-      "Built a low-cost wearable capacitive sensing platform that can be scanned, visualized, and logged from a smartphone.",
-      "Created a cross-platform iOS and Android app for real-time capacitance data capture.",
-      "Reduced estimated per-unit cost to $0.40-$0.65 at scale, 75-90% below comparable Bluetooth systems.",
-      "Awarded 2nd place out of 37 projects at the ECE Undergraduate Research Symposium; patent filed.",
-      "Built Python workflows for RF/microwave inverse design using CST simulation, optimization, surrogate modeling, and physics-based performance prediction.",
-      "Built a production-style antenna test platform for electric-field validation using thermal imaging at two polarizations, STM32/grblHAL motion control, RF relay timing, and automated cold/hot delta-image capture.",
-      "Developed real-time computer vision tooling for running-form analysis with 20+ biomechanical metrics at 35 FPS.",
-    ],
-    links: [
+    date: "May 2024 - Present",
+    projects: [
       {
-        label: "Capacitance sensor poster",
-        href: "https://docs.google.com/presentation/d/1T1qgnnrkYAt_PJ09slcXwNkcZV427z03/",
+        title: "Cost Effective Capacitance Sensor Platform for Wearable Applications",
+        bullets: [
+          "Developed a low-cost capacitive sensing system for wearable use that can be scanned and read with a smartphone.",
+          "Reduced cost by 75-90% compared to Bluetooth systems, with an estimated per-unit cost of $0.40-$0.65 at scale.",
+          "Awarded 2nd place at the ECE Undergraduate Research Symposium among 37 projects; patent filed.",
+        ],
+        links: [
+          {
+            label: "Poster",
+            href: "https://docs.google.com/presentation/d/1T1qgnnrkYAt_PJ09slcXwNkcZV427z03/",
+          },
+        ],
       },
       {
-        label: "Running form analyzer",
-        href: "https://github.com/henryczup/running-form-analyzer",
+        title: "RFIC Transformer Inverse Design",
+        bullets: [
+          "Built a Python toolkit for RFIC transformer layout generation, EMX/Cadence evaluation, and optimization.",
+          "Added workflows with Evolution Strategies and Bayesian Optimization support for transformer design exploration.",
+        ],
+        links: [
+          {
+            label: "GitHub",
+            href: "https://github.com/henryczup/rfic-transformer-inverse-design",
+          },
+        ],
+      },
+      {
+        title: "Production Line Antenna Test Platform",
+        bullets: [
+          "Built a production-style antenna test platform for e-field validation using thermal imaging at two polarizations.",
+          "Integrated STM32 Nucleo motion control with grblHAL, TB6600 stepper drivers, and RF relay control.",
+        ],
+        links: [
+          {
+            label: "Website",
+            href: "https://henryczup.github.io/ims-2026-project-page",
+          },
+        ],
       },
     ],
   },
@@ -67,12 +95,11 @@ export const experience: ResumeItem[] = [
     title: "Founder, Technician",
     org: "Capital Tech Repairs",
     location: "Madison, WI",
-    date: "May 2023 - present",
+    date: "May 2023 - Present",
     bullets: [
-      "Launched an on-campus iPhone repair service designed around fast, walkable service for college students.",
-      "Completed 36+ repairs with a 100% 5-star review rate across 28 reviews and a 29-minute average repair time.",
-      "Built a full-stack booking platform with real-time calendar integration and support for multiple repair locations.",
-      "Drove 7,000+ views from 1,600+ users with 63-second average engagement and 17,000+ tracked user events.",
+      "Launched an on-campus iPhone repair service tailored to college students, offering fast, walkable convenience.",
+      "Completed 36+ repairs with a 100% 5-star review rate (28/28) and an average repair time of 29 minutes.",
+      "Attracted 7,000+ views from 1,600+ users with 63-second average engagement, managing 17,000+ user events.",
     ],
     links: [{ label: "Website", href: "https://capitaltechrepairs.com" }],
   },
@@ -80,57 +107,48 @@ export const experience: ResumeItem[] = [
 
 export const selectedProjects: ResumeItem[] = [
   {
-    title: "RFIC Transformer Inverse Design",
-    location: "Madison, WI",
-    date: "2026",
-    bullets: [
-      "Built a Python toolkit for RFIC transformer layout generation, EMX/Cadence evaluation, and optimization.",
-      "Implemented layout export, Touchstone/S-parameter analysis, differential metric extraction, and objective scoring.",
-      "Added workflows with evolution strategies and Bayesian optimization support for transformer design exploration.",
-    ],
-    links: [{ label: "GitHub", href: "https://github.com/henryczup/rfic-transformer-inverse-design" }],
-  },
-  {
-    title: "QR Antenna Optimizer",
-    location: "Madison, WI",
-    date: "2026",
-    bullets: [
-      "Built a Python/CST workflow to generate QR-code-based microstrip patch antennas.",
-      "Automated S11 simulation and optimization across patch size, feed width, and QR geometry variants.",
-      "Ranked QR payloads and rotations to preserve scanability while maintaining antenna feed connectivity.",
-      "Orchestrated large CST design sweeps on CHTC GPUs using TuRBO optimization.",
-    ],
-  },
-  {
     title: "LAXGRADES",
-    location: "Madison, WI",
-    date: "2024 - present",
+    date: "",
     bullets: [
-      "Created a UW-La Crosse grade distribution platform that analyzes 17,000+ grades to support course selection.",
-      "Implemented search and filtering around historical grade data for registration planning.",
-      "Reached 2,800 users, 107,000+ site events, and 3m 53s average engagement per active user.",
-      "Monetized organic registration-period traffic through ad placement.",
+      "Created a grade distribution platform for UW-La Crosse, analyzing 17,000+ grades to guide course selection.",
+      "Attracted 2,800 users with 107,000+ site events and an average engagement time of 3m 53s per active user.",
     ],
     links: [{ label: "Website", href: "https://laxgrades.com" }],
   },
   {
-    title: "Theta Tau Xi Website",
-    location: "Madison, WI",
-    date: "2024",
+    title: "QR Antenna Optimizer",
+    date: "",
     bullets: [
-      "Led a complete website redesign that won Best Website at nationals among 94 chapters.",
-      "Increased engagement to 1,900+ users and 13,800+ events with a 1:03 average session duration.",
+      "Built a Python/CST workflow to generate QR-code-based microstrip patch antennas.",
+      "Automated S11 simulation and Bayesian Optimization across patch size, feed width, and QR geometry variants.",
+    ],
+    links: [{ label: "Website", href: "https://www.qrantenna.com" }],
+  },
+  {
+    title: "Theta Tau Engineering Fraternity Website",
+    date: "",
+    bullets: [
+      'Won "Best Website" award at nationals out of 94 chapters for leading a complete website redesign.',
+      "Drove engagement to 1,900+ users and 13,800+ events with a 1:03 average session duration.",
     ],
     links: [{ label: "Website", href: "https://thetatauxi.org" }],
   },
   {
     title: "Auto Door Unlocker",
-    location: "Madison, WI",
-    date: "2024",
+    date: "",
     bullets: [
-      "Built an ESP32-based system that detects apartment intercom calls and sends DTMF tones to unlock a building entrance.",
-      "Integrated ring detection, off-hook control, GPIO switching, and a DTMF module into a working embedded prototype.",
+      "Built an ESP32-based system that automatically unlocks building entrance when the apartment intercom is called.",
+      "Detects incoming calls using ring detection and initiates an automatic response with DTMF tone to unlock the door.",
     ],
     links: [{ label: "GitHub", href: "https://github.com/henryczup/auto-door-unlocker" }],
+  },
+  {
+    title: "Running Form Analysis System",
+    date: "",
+    bullets: [
+      "Developed a computer vision system to analyze running form, improve technique, and reduce injuries.",
+      "Engineered a real-time system extracting 20+ biomechanical metrics at 35 frames per second.",
+    ],
+    links: [{ label: "GitHub", href: "https://github.com/henryczup/running-form-analyzer" }],
   },
 ];
