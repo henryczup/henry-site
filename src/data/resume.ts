@@ -82,12 +82,6 @@ export const experience: ResumeItem[] = [
           "Built a production-style antenna test platform for e-field validation using thermal imaging at two polarizations.",
           "Integrated STM32 Nucleo motion control with grblHAL, TB6600 stepper drivers, and RF relay control.",
         ],
-        links: [
-          {
-            label: "Website",
-            href: "https://henryczup.github.io/ims-2026-project-page",
-          },
-        ],
       },
     ],
   },

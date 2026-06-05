@@ -69,8 +69,6 @@ export const projectSections: ProjectSection[] = [
         title: "Production Line Antenna Test Platform",
         oneLiner:
           "Production-style e-field validation platform using thermal imaging at two polarizations and RF relay control.",
-        href: "https://henryczup.github.io/ims-2026-project-page/",
-        linkLabel: "Website",
         thumb: "/thumbs/screens/production-line-antenna-test-platform.png",
         tags: ["rf", "thermal", "automation"],
       },
