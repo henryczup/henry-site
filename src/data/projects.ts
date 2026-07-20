@@ -65,25 +65,6 @@ export const projectSections: ProjectSection[] = [
         thumb: "/thumbs/screens/rfic-transformer-inverse-design.png",
         tags: ["rfic", "emx", "optimization"],
       },
-      {
-        slug: "rf-passives-inverse-design",
-        title: "Radio Frequency Passives Inverse Design",
-        oneLiner:
-          "Inverse-design workflows for RF passive structures including antennas and Doherty combiner networks.",
-        href: "https://uwprod-my.sharepoint.com/:p:/g/personal/hczupryna_wisc_edu/IQAMCx84ZAsVS6csbYI1Mx5NATgis0AIZhOF65viPtPGbkU?e=2Chbhj",
-        linkLabel: "Slides",
-        thumb: "/thumbs/screens/multiport-microwave-inverse-design.png",
-        tags: ["rf", "antennas", "optimization"],
-      },
-      {
-        slug: "production-line-antenna-test-platform",
-        title: "Production Line Antenna Test Platform",
-        oneLiner:
-          "Production-style e-field validation platform using thermal imaging at two polarizations and RF relay control.",
-        linkLabel: "Coming soon",
-        thumb: "/thumbs/screens/production-line-antenna-test-platform.png",
-        tags: ["rf", "thermal", "automation"],
-      },
     ],
   },
   {
@@ -102,7 +83,7 @@ export const projectSections: ProjectSection[] = [
     ],
   },
   {
-    title: "Projects",
+    title: "Side Projects",
     projects: [
       {
         slug: "laxgrades",
