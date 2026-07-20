@@ -4,7 +4,7 @@ export type Project = {
   oneLiner: string;
   href?: string;
   linkLabel?: string;
-  thumb: string; // path under /public
+  thumb: string; // path under /public or an approved remote image URL
   tags?: string[];
   featured?: boolean;
 };
@@ -18,6 +18,17 @@ export const projectSections: ProjectSection[] = [
   {
     title: "Featured",
     projects: [
+      {
+        slug: "seeing-radio-waves-with-heat",
+        title: "Demo at the IEEE International MTT Symposia (IMS)",
+        oneLiner:
+          "Visualizing antenna array near-field pattern through thermal imaging.",
+        href: "https://www.youtube.com/watch?v=xtfgcbLd1I8",
+        linkLabel: "YouTube",
+        thumb: "https://i.ytimg.com/vi/xtfgcbLd1I8/hqdefault.jpg",
+        tags: ["rf", "phased arrays", "thermal imaging"],
+        featured: true,
+      },
       {
         slug: "qr-antenna-optimizer",
         title: "QR Antenna Optimizer",
