@@ -7,6 +7,7 @@ export type Project = {
   thumb: string; // path under /public or an approved remote image URL
   tags?: string[];
   featured?: boolean;
+  fullWidth?: boolean;
 };
 
 export type ProjectSection = {
@@ -45,6 +46,17 @@ export const projectSections: ProjectSection[] = [
   {
     title: "University of Wisconsin-Madison Research",
     projects: [
+      {
+        slug: "hotfields",
+        title: "Thermal Near-Field Antenna Test Platform",
+        oneLiner:
+          "Production-line antenna testing with rapid thermal near-field measurements, motion control, and RF switching.",
+        href: "https://www.hotfields.tech/",
+        linkLabel: "Website",
+        thumb: "/thumbs/screens/thermal-near-field-antenna-test-platform.png",
+        tags: ["rf", "thermal imaging", "automation"],
+        fullWidth: true,
+      },
       {
         slug: "capacitance-sensor-platform",
         title: "Cost Effective Capacitance Sensor Platform",

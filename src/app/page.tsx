@@ -40,7 +40,7 @@ function ProjectCard({
 
   const className = [
     "group rounded-2xl border border-zinc-800 bg-zinc-950/40 p-4 transition hover:border-zinc-700",
-    wide ? "sm:col-span-2" : "",
+    project.fullWidth || wide ? "sm:col-span-2" : "",
   ]
     .filter(Boolean)
     .join(" ");
