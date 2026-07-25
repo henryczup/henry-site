@@ -15,19 +15,19 @@ export type ResumeItem = {
 
 export const education: ResumeItem[] = [
   {
-    title: "B.S. in Computer Engineering",
-    org: "University of Wisconsin-Madison",
-    location: "Madison, WI",
-    date: "September 2022 - December 2025",
-    subtitle:
-      "GPA: 3.54/4.00. Courses: Operating Systems, Computer Architecture, Digital System Design & Synthesis, Microprocessor Systems, Artificial Neural Networks, Applied Communications Systems, Client Focused Hardware Prototyping Capstone.",
-  },
-  {
     title: "M.S. in Electrical and Computer Engineering",
     org: "University of Wisconsin-Madison",
     location: "Madison, WI",
-    date: "January 2026 - Expected December 2026",
+    date: "January 2026 – Expected December 2026",
     subtitle: "Focus: Electromagnetics, Machine Learning & Signal Processing",
+  },
+  {
+    title: "B.S. in Computer Engineering",
+    org: "University of Wisconsin-Madison",
+    location: "Madison, WI",
+    date: "September 2022 – December 2025",
+    subtitle:
+      "Courses: Operating Systems | Computer Architecture | Digital System Design & Synthesis | Microprocessor Systems | Artificial Neural Networks | Applied Communications Systems | Client Focused Hardware Prototyping Capstone",
   },
 ];
 
@@ -36,7 +36,7 @@ export const experience: ResumeItem[] = [
     title: "Software Engineering Intern",
     org: "Honeywell Aerospace",
     location: "Phoenix, AZ",
-    date: "June 2025 - August 2025",
+    date: "June 2025 – August 2025",
     bullets: [
       "Developed a secure, on-device AI system in Docker for local data processing.",
       "Automated data search task saving 13.87 minutes per hour of work.",
@@ -44,25 +44,11 @@ export const experience: ResumeItem[] = [
     ],
   },
   {
-    title: "Researcher",
+    title: "Graduate Student",
     org: "University of Wisconsin-Madison",
     location: "Madison, WI",
-    date: "May 2024 - Present",
+    date: "May 2024 – Present",
     projects: [
-      {
-        title: "Cost Effective Capacitance Sensor Platform for Wearable Applications",
-        bullets: [
-          "Developed a low-cost capacitive sensing system for wearable use that can be scanned and read with a smartphone.",
-          "Reduced cost by 75-90% compared to Bluetooth systems, with an estimated per-unit cost of $0.40-$0.65 at scale.",
-          "Awarded 2nd place at the ECE Undergraduate Research Symposium among 37 projects; patent filed.",
-        ],
-        links: [
-          {
-            label: "Poster",
-            href: "https://docs.google.com/presentation/d/1T1qgnnrkYAt_PJ09slcXwNkcZV427z03/",
-          },
-        ],
-      },
       {
         title: "RFIC Transformer Inverse Design",
         bullets: [
@@ -77,10 +63,31 @@ export const experience: ResumeItem[] = [
         ],
       },
       {
-        title: "Production Line Antenna Test Platform",
+        title: "Cost Effective Capacitance Sensor Platform for Wearable Applications",
         bullets: [
-          "Built a production-style antenna test platform for e-field validation using thermal imaging at two polarizations.",
-          "Integrated STM32 Nucleo motion control with grblHAL, TB6600 stepper drivers, and RF relay control.",
+          "Developed a low-cost capacitive sensing system for wearable use that can be scanned and read with a smartphone.",
+          "Reduced cost by 75–90% compared to Bluetooth systems, with an estimated per-unit cost of $0.40–$0.65 at scale.",
+          "Awarded 2nd place at the ECE Undergraduate Research Symposium among 37 projects, patent filed.",
+        ],
+        links: [
+          {
+            label: "Poster",
+            href: "https://docs.google.com/presentation/d/1T1qgnnrkYAt_PJ09slcXwNkcZV427z03/edit?usp=sharing&ouid=115041091065597172175&rtpof=true&sd=true",
+          },
+        ],
+      },
+      {
+        title: "Rapid Thermal Near-Field Imaging",
+        bullets: [
+          "Built an antenna platform capturing 262,144 spatial samples across a full 2D plane in under 10 seconds.",
+          "Enabled separation of Ex/Ey field components for production validation of clean and defective antenna arrays.",
+          "Developed Python control software automating motion, RF switching, thermal capture, and test sequencing.",
+        ],
+        links: [
+          {
+            label: "Website",
+            href: "https://hotfields.tech",
+          },
         ],
       },
     ],
@@ -89,7 +96,7 @@ export const experience: ResumeItem[] = [
     title: "Founder, Technician",
     org: "Capital Tech Repairs",
     location: "Madison, WI",
-    date: "May 2023 - Present",
+    date: "May 2023 – May 2026",
     bullets: [
       "Launched an on-campus iPhone repair service tailored to college students, offering fast, walkable convenience.",
       "Completed 36+ repairs with a 100% 5-star review rate (28/28) and an average repair time of 29 minutes.",

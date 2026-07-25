@@ -103,6 +103,37 @@ export default function Resume() {
     <main className="max-w-4xl">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Resume</h1>
+        <div className="mt-4 flex flex-wrap gap-x-3 gap-y-2 text-sm text-zinc-400">
+          <a className="hover:text-zinc-200" href="mailto:henryczup@gmail.com">
+            henryczup@gmail.com
+          </a>
+          <span aria-hidden="true">|</span>
+          <a className="hover:text-zinc-200" href="tel:+17157817176">
+            715-781-7176
+          </a>
+          <span aria-hidden="true">|</span>
+          <span>Madison, WI</span>
+          <span aria-hidden="true">|</span>
+          <span>U.S. Citizen</span>
+          <span aria-hidden="true">|</span>
+          <a
+            className="hover:text-zinc-200"
+            href="https://www.linkedin.com/in/henry-czupryna-2b3044250/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+          <span aria-hidden="true">|</span>
+          <a
+            className="hover:text-zinc-200"
+            href="https://henryczupryna.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            henryczupryna.com
+          </a>
+        </div>
       </div>
 
       <div className="space-y-8">
@@ -118,16 +149,10 @@ export default function Resume() {
           ))}
         </Section>
 
-        <Section title="Selected Projects">
+        <Section title="Projects">
           {selectedProjects.map((item) => (
             <Entry key={item.title} item={item} />
           ))}
-        </Section>
-
-        <Section title="Interests">
-          <p className="text-sm leading-6 text-zinc-300">
-            Marathon running, programming, and technology repair.
-          </p>
         </Section>
       </div>
     </main>
